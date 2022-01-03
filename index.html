@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- library stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-select.css" type="text/css">
+    
+    <!-- jquery -->
+    <script src="js/libs/jquery/jquery-3.4.1.min.js"></script>
+    
+    <!-- backbone and dependencies -->
+    <script src="js/libs/backbone/underscore.js"></script>
+    <script src="js/libs/backbone/json2.js"></script>
+    <script src="js/libs/backbone/backbone.js"></script>
+    
+    <!-- jquery-ui and stylesheets -->
+    <script src="js/libs/jqueryui/jquery-ui.js"></script>
+    
+    
+    <!-- bootstrap -->
+    <script src="js/libs/bootstrap/bootstrap.bundle.js"></script>
+    <script src="js/libs/bootstrap/bootbox.min.js"></script>
+    <script src="js/libs/bootstrap/bootstrap-toggle.min.js"></script>
+    <script src="js/libs/bootstrap/bootstrap-select.min.js"></script>
+    
+    <!-- application styles -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    
+    <!-- calculator utils -->
+    <script src="js/moqc-oc-utils.js"></script>
+    
+  </head>
+  
+  <body>
+    
+    <div class="container-fluid d-flex flex-column" style="height: 100vh"> 
+        <div class="row">
+	        <div id="header" class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12 title-white">
+                        <h3 id="title">MOQC Opioid Calculator aaa</h3>
+                    </div>
+                </div>
+	        </div>
+	    </div>
+	    <div class="row">
+            <div id="mainpage" class="col-sm-12">
+            
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/template" id="oc-header-template">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2 text-center align-self-center">
+                    <a href="https://moqc.org/"><img src="images/MOQClogo-pad.png"  id="logoImage" width="64" height="48" title="" alt=""></a>
+                </div>
+                <div class="col-sm-10 title-white text-left align-self-left">
+                    <h3 id="title">MOQC Opioid Calculator sdfsa</h3>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="oc-home-template">
+
+        <form class="was-validated" id="ocForm">
+
+            <div class="container-fluid">
+                <div class="row">
+                    
+                    <div class="col-md-1">
+                    </div>
+
+                    <div class="col-md-10">
+
+                        <div class="row spacedRow">
+                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                                Age:
+                            </div>
+                            
+                            <div class="col-sm-8 text-center align-self-center">
+                                <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="score-age" id="age0" value="5">&le;20
+                                    </label>
+
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="score-age" id="age1" value="4">20-39
+                                    </label>
+
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="score-age" id="age2" value="3">40-59
+                                    </label>
+
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="score-age" id="age3" value="2">60-79
+                                    </label>
+
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="score-age" id="age4" value="1">&ge;80
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
+                        <div class="row spacedRow">
+                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                                History of Depression
+                            </div>
+                            
+                            <div class="col-sm-8 text-center align-self-center">
+                                <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-depression" id="depression0" value="0">No
+                                    </label>
+    
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-depression" id="depression1" value="2">Yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row spacedRow">
+                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                                History of Anxiety
+                            </div>
+                            
+                            <div class="col-sm-8 text-center align-self-center">
+                                <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-anxiety" id="anxiety0" value="0">No
+                                    </label>
+    
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-anxiety" id="anxiety1" value="2">Yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row spacedRow">
+                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                                History of Chronic Opioid Abuse
+                            </div>
+                            
+                            <div class="col-sm-8 text-center align-self-center">
+                                <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-coa" id="coa0" value="0">No
+                                    </label>
+    
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-coa" id="coa1" value="2">Yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row spacedRow">
+                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                                History of Alcohol Abuse
+                            </div>
+                            
+                            <div class="col-sm-8 text-center align-self-center">
+                                <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-aa" id="aa0" value="0">No
+                                    </label>
+    
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-aa" id="aa1" value="2">Yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row spacedRow">
+                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                                History of Chronic Pain
+                            </div>
+                            
+                            <div class="col-sm-8 text-center align-self-center">
+                                <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-pain" id="pain0" value="0">No
+                                    </label>
+    
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="risk-pain" id="pain1" value="2">Yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row spacedRow">
+                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                                Admitted Patient
+                            </div>
+                            
+                            <div class="col-sm-8 text-center align-self-center">
+                                <div class="btn-group btn-group-toggle admitted-buttons updateScore" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="admitted" id="admitted0" value="false">No
+                                    </label>
+    
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="admitted" id="admitted1" value="true">Yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="moreInfoDiv">
+                        </div>
+
+
+                        <div class="row scoreRow">
+                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                                PILL COUNT
+                            </div>
+                            
+                            <div class="col-sm-8 text-center align-self-center" id="scoreLabel">
+                                <div class="button updateScore" id="calculateButtonDiv">
+                                    <input type="button" class="btn btn-outline-success" id="calculateFormButton" value="Show Pill Count">
+                                </div>
+                                <div id="countLabelDiv" hidden>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-1">
+                    </div>
+
+
+                </div>
+            </div>
+
+        </form>
+
+    </script>
+
+    <script type="text/template" id="oc-admitted-template">
+        
+        <div class="row spacedRow" id="admitted-div">
+            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                Surgical Approach (Admitted)
+            </div>
+            
+            <div class="col-sm-8 text-center align-self-center">
+                <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary">
+                        <input type="radio" name="scoreapp" id="approach0" class="admittedInput" value="3" checked>Laparotomy
+                    </label>
+
+                    <label class="btn btn-outline-secondary">
+                        <input type="radio" name="scoreapp" id="approach1" class="admittedInput" value="-2">Minimally Invasive
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row spacedRow" id="appadmitted-div">
+            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                Patients using more than 6 oxycodone pills (45 morphine equivalents) in the last 24 hours prior to discharge
+            </div>
+            
+            <div class="col-sm-8 text-center align-self-center">
+                <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary">
+                        <input type="radio" name="score-appadmitted" id="appadmitted0" class="admittedInput" value="0">No
+                    </label>
+
+                    <label class="btn btn-outline-secondary">
+                        <input type="radio" name="score-appadmitted" id="appadmitted1" class="admittedInput" value="3">Yes
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </script>
+
+    <script type="text/template" id="oc-nonadmitted-template">
+
+        <div class="row spacedRow" id="nonadmitted-div">
+            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                Surgical Approach (Not Admitted)
+            </div>
+            
+            <div class="col-sm-8 text-center align-self-center">
+                <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary">
+                        <input type="radio" name="score-approach" id="approach2" class="admittedInput" value="-3">Minor MIS Procedure
+                    </label>
+
+                    <label class="btn btn-outline-secondary">
+                        <input type="radio" name="score-approach" id="approach3" class="admittedInput" value="0">Minimally Invasive
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </script>
+
+
+    <script type="text/template" id="oc-warning-template">
+
+        <div class="warningParagraph">
+            Users should take responsibility of checking the accuracy of this website prior to using the contents in critical situations, such as documentation in patient chart or medical records. The information provided on this website is "as-is" and makes no representations or warranties in relation to the medical information on this website.
+        </div>
+
+        <div class="warningParagraph">
+            I agree that the website host and developer will not be held responsible for any errors or consequences in management of patient care resulting from such errors. I will confirm that the information is correct before using it in any documentation.
+        </div>
+    </script>
+    
+  </body>
+
+  <!-- app -->
+  <script src="js/moqc-oc.js"></script>
+
+  <!-- app router -->
+  <script src="js/moqc-oc-router.js"></script>
+
+</html>
