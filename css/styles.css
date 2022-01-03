@@ -172,6 +172,17 @@ div .opnoteListTitle {
     color: rgb(170, 170, 170);
 }
 
+div .opnoteListDetail {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+
+    font-size: 11px;
+    
+    color: rgb(170, 170, 170);
+
+}
+
 ul#opnoteList {
     list-style-type:none;
     width: 100%;
