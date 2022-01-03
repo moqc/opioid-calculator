@@ -42,11 +42,7 @@
     <div class="container-fluid d-flex flex-column" style="height: 100vh"> 
         <div class="row">
 	        <div id="header" class="col-sm-12">
-                <div class="row">
-                    <div class="col-sm-12 title-white">
-                        <h3 id="title">MOQC Opioid Calculator aaa</h3>
-                    </div>
-                </div>
+                
 	        </div>
 	    </div>
 	    <div class="row">
@@ -59,11 +55,14 @@
     <script type="text/template" id="oc-header-template">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-2 text-center align-self-center">
-                    <a href="https://moqc.org/"><img src="images/MOQClogo-pad.png"  id="logoImage" width="64" height="48" title="" alt=""></a>
+                <div class="col-sm-2">
                 </div>
-                <div class="col-sm-10 title-white text-left align-self-left">
-                    <h3 id="title">MOQC Opioid Calculator sdfsa</h3>
+                <div class="col-sm-3 text-center align-self-center title-white">
+                    <a href="https://moqc.org/"><img src="images/MOQClogo-pad.png" id="logoImage" width="64" height="48" title="" alt=""></a>
+                    Opioid Calculator
+                </div>
+                
+                <div class="col-sm-7">
                 </div>
             </div>
         </div>
@@ -76,17 +75,17 @@
             <div class="container-fluid">
                 <div class="row">
                     
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                     </div>
 
-                    <div class="col-md-10">
+                    <div class="col-md-8">
 
                         <div class="row spacedRow">
-                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                                 Age:
                             </div>
                             
-                            <div class="col-sm-8 text-center align-self-center">
+                            <div class="col-sm-7 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary">
                                         <input type="radio" name="score-age" id="age0" value="5">&le;20
@@ -114,11 +113,11 @@
 
                         
                         <div class="row spacedRow">
-                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                                 History of Depression
                             </div>
                             
-                            <div class="col-sm-8 text-center align-self-center">
+                            <div class="col-sm-7 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary">
                                         <input type="radio" name="risk-depression" id="depression0" value="0">No
@@ -132,11 +131,11 @@
                         </div>
 
                         <div class="row spacedRow">
-                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                                 History of Anxiety
                             </div>
                             
-                            <div class="col-sm-8 text-center align-self-center">
+                            <div class="col-sm-7 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary">
                                         <input type="radio" name="risk-anxiety" id="anxiety0" value="0">No
@@ -150,11 +149,11 @@
                         </div>
 
                         <div class="row spacedRow">
-                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                                 History of Chronic Opioid Abuse
                             </div>
                             
-                            <div class="col-sm-8 text-center align-self-center">
+                            <div class="col-sm-7 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary">
                                         <input type="radio" name="risk-coa" id="coa0" value="0">No
@@ -168,11 +167,11 @@
                         </div>
 
                         <div class="row spacedRow">
-                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                                 History of Alcohol Abuse
                             </div>
                             
-                            <div class="col-sm-8 text-center align-self-center">
+                            <div class="col-sm-7 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary">
                                         <input type="radio" name="risk-aa" id="aa0" value="0">No
@@ -186,11 +185,11 @@
                         </div>
 
                         <div class="row spacedRow">
-                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                                 History of Chronic Pain
                             </div>
                             
-                            <div class="col-sm-8 text-center align-self-center">
+                            <div class="col-sm-7 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary">
                                         <input type="radio" name="risk-pain" id="pain0" value="0">No
@@ -206,11 +205,11 @@
 
 
                         <div class="row spacedRow">
-                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                                 Admitted Patient
                             </div>
                             
-                            <div class="col-sm-8 text-center align-self-center">
+                            <div class="col-sm-7 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle admitted-buttons updateScore" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary">
                                         <input type="radio" name="admitted" id="admitted0" value="false">No
@@ -228,11 +227,11 @@
 
 
                         <div class="row scoreRow">
-                            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+                            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                                 PILL COUNT
                             </div>
                             
-                            <div class="col-sm-8 text-center align-self-center" id="scoreLabel">
+                            <div class="col-sm-7 text-center align-self-center" id="scoreLabel">
                                 <div class="button updateScore" id="calculateButtonDiv">
                                     <input type="button" class="btn btn-outline-success" id="calculateFormButton" value="Show Pill Count">
                                 </div>
@@ -245,7 +244,7 @@
 
                     </div>
 
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                     </div>
 
 
@@ -259,11 +258,11 @@
     <script type="text/template" id="oc-admitted-template">
         
         <div class="row spacedRow" id="admitted-div">
-            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                 Surgical Approach (Admitted)
             </div>
             
-            <div class="col-sm-8 text-center align-self-center">
+            <div class="col-sm-7 text-center align-self-center">
                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
                     <label class="btn btn-outline-secondary">
                         <input type="radio" name="scoreapp" id="approach0" class="admittedInput" value="3" checked>Laparotomy
@@ -277,11 +276,11 @@
         </div>
 
         <div class="row spacedRow" id="appadmitted-div">
-            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                 Patients using more than 6 oxycodone pills (45 morphine equivalents) in the last 24 hours prior to discharge
             </div>
             
-            <div class="col-sm-8 text-center align-self-center">
+            <div class="col-sm-7 text-center align-self-center">
                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
                     <label class="btn btn-outline-secondary">
                         <input type="radio" name="score-appadmitted" id="appadmitted0" class="admittedInput" value="0">No
@@ -299,11 +298,11 @@
     <script type="text/template" id="oc-nonadmitted-template">
 
         <div class="row spacedRow" id="nonadmitted-div">
-            <div class="col-sm-4 text-center align-self-center opnoteListTitle">
+            <div class="col-sm-5 text-center align-self-center opnoteListTitle">
                 Surgical Approach (Not Admitted)
             </div>
             
-            <div class="col-sm-8 text-center align-self-center">
+            <div class="col-sm-7 text-center align-self-center">
                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
                     <label class="btn btn-outline-secondary">
                         <input type="radio" name="score-approach" id="approach2" class="admittedInput" value="-3">Minor MIS Procedure
