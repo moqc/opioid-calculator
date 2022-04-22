@@ -198,7 +198,19 @@ div .opnoteDisclaimer {
     align-items: center;
     justify-content: center;
 
-    font-size: 12px;
+    font-size: 14px;
+    
+    color: rgb(170, 170, 170);
+}
+
+div .opnoteDisclaimerBold {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+
+    font-weight: bold;
     
     color: rgb(170, 170, 170);
 }
