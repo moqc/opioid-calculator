@@ -1,19 +1,18 @@
-
-
 div #main-container {
 	height: 100vh;
 }
 
 .spacedRow {
+	/*
     padding-top: 8px;
     padding-bottom: 8px;
-
+*/
     border-bottom: 1px solid #666666;
+	padding: 8px;
 }
 
 .spacedRowNoBorder {
     padding-top: 2px;
-
 }
 
 #detailsRow{
@@ -29,7 +28,7 @@ div #main-container {
     font-size: 18px;
     color: #666666;
 
-    background-color: #feffb9  ;
+    background-color: #ececec;
 }
 
 
@@ -66,6 +65,7 @@ div #addFilterButtonBar {
 
 div .button {
 	margin-bottom: 8px;
+	margin-top: 8px;
 }
 
 div #pageTop {
@@ -86,7 +86,7 @@ div .title-white {
 
 div #header {
     padding-top: 0px;
-    
+/*    
     margin-bottom: 6px;
 	
 	height: 50px;
@@ -95,6 +95,7 @@ div #header {
     border-bottom-width: 2px;
     border-bottom-color: gray;
     border-bottom-style: solid;
+	*/
 }
 
 
@@ -166,10 +167,9 @@ div .opnoteListTitle {
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 15px;
     
-    color: rgb(170, 170, 170);
+    color: #856ba3;
 }
 
 div .opnoteListTitleRows {
@@ -180,7 +180,7 @@ div .opnoteListTitleRows {
 
     font-size: 15px;
     
-    color: rgb(170, 170, 170);
+    color: #666666;
 }
 
 div .opnoteListTitleSubRows {
@@ -190,7 +190,7 @@ div .opnoteListTitleSubRows {
 
     font-size: 12px;
     
-    color: rgb(170, 170, 170);
+    color: #666666;
 }
 
 div .opnoteDisclaimer {
@@ -200,7 +200,7 @@ div .opnoteDisclaimer {
 
     font-size: 14px;
     
-    color: rgb(170, 170, 170);
+    color: #666666;
 }
 
 div .opnoteDisclaimerBold {
@@ -212,7 +212,9 @@ div .opnoteDisclaimerBold {
 
     font-weight: bold;
     
-    color: rgb(170, 170, 170);
+    color: #666666;
+	/* ADDED PADDING */
+	padding: 8px;
 }
 
 div .opnoteListDetail {
@@ -222,7 +224,7 @@ div .opnoteListDetail {
 
     font-size: 11px;
     
-    color: rgb(170, 170, 170);
+    color: #666666;
 
 }
 
