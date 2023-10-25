@@ -13,7 +13,7 @@ HomeOpCalculatorView = Backbone.View.extend({
         $('#header').html(ocHeaderTemplate);
 
         //render mainpage buttons
-        var ocHomeTemplate = _.template($('#oc-home-template').html())({});
+        var ocHomeTemplate = _.template($('#oc-home-template').html())(DATAMAP);
         $('#mainpage').html(ocHomeTemplate);
 
         $('.updateScore').click(updateScore);
@@ -23,7 +23,6 @@ HomeOpCalculatorView = Backbone.View.extend({
 
             console.log("admitted clicked");
 
-
             setTimeout(function () {
                 var formData = $('#ocForm').serializeArray();
                 var admitted = getFormDataElement(formData, "admitted")
@@ -32,22 +31,14 @@ HomeOpCalculatorView = Backbone.View.extend({
 
                 if(admitted == "true")
                 {
-                    var data = {
-                    };
-
-                    var ocAdmittedTemplate = _.template($('#oc-admitted-template').html())(data);
+                    var ocAdmittedTemplate = _.template($('#oc-admitted-template').html())(DATAMAP);
                     $('#moreInfoDiv').html(ocAdmittedTemplate);
                 }
                 else if(admitted == "false")
                 {
-                    var data = {
-                    };
-
-                    var ocNonAdmittedTemplate = _.template($('#oc-nonadmitted-template').html())(data);
+                    var ocNonAdmittedTemplate = _.template($('#oc-nonadmitted-template').html())(DATAMAP);
                     $('#moreInfoDiv').html(ocNonAdmittedTemplate);
-                    
                 }
-
                 
                 $('.updateScore').click(updateScore);
 
@@ -98,12 +89,12 @@ function calculateScore(formData) {
     var hasRiskFactor = false;
     for(var i = 0; i < formData.length; i++) {
 
-        if(formData[i].name.startsWith("score-"))
+        if(formData[i].name.startsWith("score_"))
         {
             score += Number(formData[i].value);
         }
 
-        if(formData[i].name.startsWith("risk-"))
+        if(formData[i].name.startsWith("risk_"))
         {
             if(Number(formData[i].value) > 0) {
                 hasRiskFactor = true;

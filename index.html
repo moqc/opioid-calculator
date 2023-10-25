@@ -35,6 +35,9 @@
     <!-- calculator utils -->
     <script src="js/moqc-oc-utils.js"></script>
     
+    <!-- datamap -->
+    <script src="js/moqc-oc-datamap.js"></script>
+
   </head>
   
   <body>
@@ -92,30 +95,16 @@
 
                         <div class="row spacedRow">
                             <div class="col-sm-6 text-center align-self-center opnoteListTitle">
-                                Age:
+                                <%= score_age.text %>
                             </div>
                             
                             <div class="col-sm-6 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <% score_age.inputs.forEach(input => { %>
                                     <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="score-age" id="age0" value="5">&le;20
+                                        <input type="radio" name="<%= score_age.name %>" id="<%= input.id %>" value="<%= input.value %>"><%= input.text %>
                                     </label>
-
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="score-age" id="age1" value="4">20-39
-                                    </label>
-
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="score-age" id="age2" value="3">40-59
-                                    </label>
-
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="score-age" id="age3" value="2">60-79
-                                    </label>
-
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="score-age" id="age4" value="1">&ge;80
-                                    </label>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
@@ -124,90 +113,80 @@
                         
                         <div class="row spacedRow">
                             <div class="col-sm-6 text-center align-self-center opnoteListTitle">
-                                History of Depression
+                                <%= risk_depression.text %>
                             </div>
                             
                             <div class="col-sm-6 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <% risk_depression.inputs.forEach(input => { %>
                                     <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-depression" id="depression0" value="0">No
+                                        <input type="radio" name="<%= risk_depression.name %>" id="<%= input.id %>" value="<%= input.value %>"><%= input.text %>
                                     </label>
-    
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-depression" id="depression1" value="2">Yes
-                                    </label>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row spacedRow">
                             <div class="col-sm-6 text-center align-self-center opnoteListTitle">
-                                History of Anxiety
+                                <%= risk_anxiety.text %>
                             </div>
                             
                             <div class="col-sm-6 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <% risk_anxiety.inputs.forEach(input => { %>
                                     <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-anxiety" id="anxiety0" value="0">No
+                                        <input type="radio" name="<%= risk_anxiety.name %>" id="<%= input.id %>" value="<%= input.value %>"><%= input.text %>
                                     </label>
-    
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-anxiety" id="anxiety1" value="2">Yes
-                                    </label>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row spacedRow">
                             <div class="col-sm-6 text-center align-self-center opnoteListTitle">
-                                History of Chronic Opioid Abuse
+                                <%= risk_coa.text %>
                             </div>
                             
                             <div class="col-sm-6 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <% risk_coa.inputs.forEach(input => { %>
                                     <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-coa" id="coa0" value="0">No
+                                        <input type="radio" name="<%= risk_coa.name %>" id="<%= input.id %>" value="<%= input.value %>"><%= input.text %>
                                     </label>
-    
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-coa" id="coa1" value="2">Yes
-                                    </label>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row spacedRow">
                             <div class="col-sm-6 text-center align-self-center opnoteListTitle">
-                                History of Alcohol Abuse
+                                <%= risk_aa.text %>
                             </div>
                             
                             <div class="col-sm-6 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <% risk_aa.inputs.forEach(input => { %>
                                     <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-aa" id="aa0" value="0">No
+                                        <input type="radio" name="<%= risk_aa.name %>" id="<%= input.id %>" value="<%= input.value %>"><%= input.text %>
                                     </label>
-    
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-aa" id="aa1" value="2">Yes
-                                    </label>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row spacedRow">
                             <div class="col-sm-6 text-center align-self-center opnoteListTitle">
-                                History of Chronic Pain
+                                <%= risk_pain.text %>
                             </div>
                             
                             <div class="col-sm-6 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                                    <% risk_pain.inputs.forEach(input => { %>
                                     <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-pain" id="pain0" value="0">No
+                                        <input type="radio" name="<%= risk_pain.name %>" id="<%= input.id %>" value="<%= input.value %>"><%= input.text %>
                                     </label>
-    
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="risk-pain" id="pain1" value="2">Yes
-                                    </label>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
@@ -216,18 +195,16 @@
 
                         <div class="row spacedRow">
                             <div class="col-sm-6 text-center align-self-center opnoteListTitle">
-                                Admitted Patient
+                                <%= admitted.text %>
                             </div>
                             
                             <div class="col-sm-6 text-center align-self-center">
                                 <div class="btn-group btn-group-toggle admitted-buttons updateScore" data-toggle="buttons">
+                                    <% admitted.inputs.forEach(input => { %>
                                     <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="admitted" id="admitted0" value="false">No
+                                        <input type="radio" name="<%= admitted.name %>" id="<%= input.id %>" value="<%= input.value %>"><%= input.text %>
                                     </label>
-    
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="admitted" id="admitted1" value="true">Yes
-                                    </label>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
@@ -273,36 +250,32 @@
         
         <div class="row spacedRow" id="admitted-div">
             <div class="col-sm-6 text-center align-self-center opnoteListTitle">
-                Surgical Approach (Admitted)
+                <%= score_approachAdmitted.text %>
             </div>
             
             <div class="col-sm-6 text-center align-self-center">
                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                    <% score_approachAdmitted.inputs.forEach(input => { %>
                     <label class="btn btn-outline-secondary">
-                        <input type="radio" name="score-app" id="approach0" class="admittedInput" value="3">Laparotomy
+                        <input type="radio" name="<%= score_approachAdmitted.name %>" id="<%= input.id %>" class="admittedInput" value="<%= input.value %>"><%= input.text %>
                     </label>
-
-                    <label class="btn btn-outline-secondary">
-                        <input type="radio" name="score-app" id="approach1" class="admittedInput" value="-2">Minimally Invasive
-                    </label>
+                    <% }) %>
                 </div>
             </div>
         </div>
 
         <div class="row spacedRow" id="appadmitted-div">
             <div class="col-sm-6 text-center align-self-center opnoteListTitle">
-                Patients using more than 6 oxycodone pills (45 morphine equivalents) in the last 24 hours prior to discharge
+                <%= score_currentlyUsing.text %>
             </div>
             
             <div class="col-sm-6 text-center align-self-center">
                 <div class="btn-group btn-group-toggle updateScore" data-toggle="buttons">
+                    <% score_currentlyUsing.inputs.forEach(input => { %>
                     <label class="btn btn-outline-secondary">
-                        <input type="radio" name="score-appadmitted" id="appadmitted0" class="admittedInput" value="0">No
+                        <input type="radio" name="<%= score_currentlyUsing.name %>" id="<%= input.id %>" class="admittedInput" value="<%= input.value %>"><%= input.text %>
                     </label>
-
-                    <label class="btn btn-outline-secondary">
-                        <input type="radio" name="score-appadmitted" id="appadmitted1" class="admittedInput" value="3">Yes
-                    </label>
+                    <% }) %>
                 </div>
             </div>
         </div>
@@ -314,7 +287,7 @@
         <div class="row spacedRow" id="nonadmitted-div">
             <div class="col-sm-6 text-center align-self-center">
                 <div class="row opnoteListTitleRows">
-                    Surgical Approach (For same-day discharge)
+                    <%= score_approachDischarge.text %>
                 </div>
                 <div class="row opnoteListTitleSubRows">
                     Minor MIS Procedures are:
@@ -336,13 +309,11 @@
 
                     <div class="col-sm-12 text-center align-self-center">
                         <div class="btn-group btn-group-toggle mis-buttons updateScore" data-toggle="buttons">
+                            <% score_approachDischarge.inputs.forEach(input => { %>
                             <label class="btn btn-outline-secondary">
-                                <input type="radio" name="score-approach" id="approach2" class="admittedInput" value="-3">Minor MIS Procedure
+                                <input type="radio" name="<%= score_approachDischarge.name %>" id="<%= input.id %>" class="admittedInput" value="<%= input.value %>"><%= input.text %>
                             </label>
-
-                            <label class="btn btn-outline-secondary">
-                                <input type="radio" name="score-approach" id="approach3" class="admittedInput" value="0">Minimally Invasive
-                            </label>
+                            <% }) %>
                         </div>
                     </div>
                 </div>
