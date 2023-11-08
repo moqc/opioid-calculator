@@ -115,10 +115,9 @@ function calculateScore(formData) {
     return score;
 }
 
-const apiUrl = 'https://qca1gb18f5.execute-api.us-east-2.amazonaws.com/default/storeOpioidCalculatorLog';
+const apiProxyUrl = 'https://yn93pvnpg4.execute-api.us-east-2.amazonaws.com/proxy/storeOpioidCalculatorLog';
 
 const headers = {
-    'x-api-key': 'xKNxnXsFTZw1GfGlpJMy6jJgeh36gcC6u7glBBe0', // api key
     'Content-Type': 'application/json', // Set the content type to JSON
 };
   
@@ -147,7 +146,7 @@ function sendLogReport(formData, score) {
     console.log(postBody);
     
     $.ajax({
-        url: apiUrl,
+        url: apiProxyUrl,
         type: 'POST',
         headers: headers,
         data: JSON.stringify(postBody), // Convert the body data to string
