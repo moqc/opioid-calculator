@@ -66,6 +66,8 @@ HomeOpCalculatorView = Backbone.View.extend({
 
                 $('#countLabelDiv').html(score);
 
+                sendLogReport(formData, score);
+
             }, 50);
         });
         
@@ -111,6 +113,56 @@ function calculateScore(formData) {
     }
 
     return score;
+}
+
+const apiUrl = 'https://qca1gb18f5.execute-api.us-east-2.amazonaws.com/default/storeOpioidCalculatorLog';
+
+const headers = {
+    'x-api-key': 'xKNxnXsFTZw1GfGlpJMy6jJgeh36gcC6u7glBBe0', // api key
+    'Content-Type': 'application/json', // Set the content type to JSON
+};
+  
+
+function sendLogReport(formData, score) {
+
+    // console.log("formData ->");
+    // console.log(formData);
+
+    //copy the formData into a new object
+    var postBody = [...formData];
+
+    formData.forEach(data => {
+        const found = DATAMAP[data.name].inputs.find(input => input.value === data.value);
+        data["selection"] = found.text;
+    });
+
+    //add the score
+    postBody.push({
+        name:"pillCount",
+        value:score,
+        selection:""
+    });
+
+    console.log("Sending postBody ->");
+    console.log(postBody);
+    
+    $.ajax({
+        url: apiUrl,
+        type: 'POST',
+        headers: headers,
+        data: JSON.stringify(postBody), // Convert the body data to string
+        success: function(data) {
+          console.log("SUCCESS");
+          // Use the data from the API response
+          console.log(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          // Handle any errors that occurred during the request
+          console.error('AJAX error:', errorThrown);
+          console.error('AJAX error:', textStatus);
+          console.error(jqXHR);
+        }
+      });
 }
 
 
