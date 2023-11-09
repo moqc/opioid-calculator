@@ -115,56 +115,6 @@ function calculateScore(formData) {
     return score;
 }
 
-const apiProxyUrl = 'https://yn93pvnpg4.execute-api.us-east-2.amazonaws.com/proxy/storeOpioidCalculatorLog';
-
-const headers = {
-    'Content-Type': 'application/json', // Set the content type to JSON
-};
-  
-
-function sendLogReport(formData, score) {
-
-    // console.log("formData ->");
-    // console.log(formData);
-
-    //copy the formData into a new object
-    var postBody = [...formData];
-
-    formData.forEach(data => {
-        const found = DATAMAP[data.name].inputs.find(input => input.value === data.value);
-        data["selection"] = found.text;
-    });
-
-    //add the score
-    postBody.push({
-        name:"pillCount",
-        value:score,
-        selection:""
-    });
-
-    console.log("Sending postBody ->");
-    console.log(postBody);
-    
-    $.ajax({
-        url: apiProxyUrl,
-        type: 'POST',
-        headers: headers,
-        data: JSON.stringify(postBody), // Convert the body data to string
-        success: function(data) {
-          console.log("SUCCESS");
-          // Use the data from the API response
-          console.log(data);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          // Handle any errors that occurred during the request
-          console.error('AJAX error:', errorThrown);
-          console.error('AJAX error:', textStatus);
-          console.error(jqXHR);
-        }
-      });
-}
-
-
 function showWarning() {
 
     bootbox.dialog({
