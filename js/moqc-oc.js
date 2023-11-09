@@ -128,19 +128,23 @@ function sendLogReport(formData, score) {
     // console.log(formData);
 
     //copy the formData into a new object
-    var postBody = [...formData];
+    var formDataCopy = [...formData];
 
-    formData.forEach(data => {
+    var postBody = {};
+
+    formDataCopy.forEach(data => {
         const found = DATAMAP[data.name].inputs.find(input => input.value === data.value);
         data["selection"] = found.text;
+
+        postBody[data.name] = data;
     });
 
     //add the score
-    postBody.push({
+    postBody["pillCount"] = {
         name:"pillCount",
         value:score,
         selection:""
-    });
+    }
 
     console.log("Sending postBody ->");
     console.log(postBody);
