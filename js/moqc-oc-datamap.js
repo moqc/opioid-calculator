@@ -1,4 +1,19 @@
 
+//this should match the list of keys in the DATAMAP object below
+//we've defined this list to guarantee an order when needed
+const DATAMAP_KEYS_ORDERED = [
+    "score_age",
+    "risk_depression",
+    "risk_anxiety",
+    "risk_coa",
+    "risk_aa",
+    "risk_pain",
+    "admitted",
+    "score_approachAdmitted",
+    "score_currentlyUsing",
+    "score_approachDischarge",
+]
+
 const DATAMAP = {
     "score_age": {
         "text":"Age",
