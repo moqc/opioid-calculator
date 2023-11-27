@@ -80,6 +80,14 @@ div .title-white {
     color: white;
 }
 
+div .title-purple {
+    
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 30px;
+    color: #856ba3;
+}
+
 #logoImage {
     margin-right: 6px;
 }
