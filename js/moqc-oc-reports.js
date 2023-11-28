@@ -77,8 +77,15 @@ function getLogReportFromDB() {
             // console.log("CSV: ");
             // console.log(csvString);
 
+            //generate a timestamp for the file name
+            const now = new Date();
+            const timestampDay = 
+                now.getFullYear().toString() + 
+                ('0' + (now.getMonth() + 1)).slice(-2) + //months are 0 based
+                ('0' + now.getDate()).slice(-2);
+
             //download the csv file
-            downloadCSV(csvString, "moqc-opioid-calculator-report.csv");
+            downloadCSV(csvString, "moqc-opioid-calculator-report-" + timestampDay + ".csv");
 
         },
         error: function(jqXHR, textStatus, errorThrown) {
